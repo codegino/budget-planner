@@ -1,0 +1,46 @@
+{
+  "name": "budget-planner",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react-native-stage-0": "^1.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "eslint-watch": "^3.1.4",
+    "flow-bin": "^0.72.0",
+    "jest": "^22.4.3",
+    "jest-react-native": "^18.0.0",
+    "react-test-renderer": "16.3.1"
+  },
+  "scripts": {
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest",
+    "lint": "esw src App.js",
+    "lint-watch": "esw src App.js --watch",
+    "ci": "esw src App.js"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "firebase": "^5.0.3",
+    "lodash": "^4.17.10",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-native-datepicker": "^1.7.2",
+    "react-native-loading-spinner-overlay": "^0.5.2",
+    "react-native-navigation": "^1.1.452",
+    "react-native-vector-icons": "^4.6.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
+  }
+}
