@@ -45,12 +45,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.budget-planner",
+    package = "com.budgetplanner",
 )
 
 android_resource(
     name = "res",
-    package = "com.budget-planner",
+    package = "com.budgetplanner",
     res = "src/main/res",
 )
 
