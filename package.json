@@ -4,7 +4,9 @@
   "private": true,
   "devDependencies": {
     "babel-eslint": "^8.2.3",
+    "babel-jest": "^23.0.1",
     "babel-preset-flow": "^6.23.0",
+    "babel-preset-react-native": "^4.0.0",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -13,9 +15,9 @@
     "eslint-plugin-react": "^7.7.0",
     "eslint-watch": "^3.1.4",
     "flow-bin": "^0.72.0",
-    "jest": "^22.4.3",
+    "jest": "^22.4.4",
     "jest-react-native": "^18.0.0",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "^16.3.1"
   },
   "scripts": {
     "start": "react-native start",
@@ -23,7 +25,6 @@
     "ios": "react-native run-ios",
     "test": "jest",
     "lint": "esw src App.js",
-    "lint-watch": "esw src App.js --watch",
     "ci": "esw src App.js"
   },
   "jest": {
