@@ -5,8 +5,8 @@ import App from './App';
 import configureStore from './src/store/configureStore';
 
 console.ignoredYellowBox = [
-    'Setting a timer'
-  ];
+    'Setting a timer',
+];
 
 const store = configureStore();
 

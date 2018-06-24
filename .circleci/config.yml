@@ -34,12 +34,17 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
-      # run tests!
+      # run lint!
       - run:
            name: Run ES lint
            command:  yarn lint
 
+      # run tests!
       - run:
           name: Run test
           command: yarn test
 
+      # run flow!
+      - run:
+          name: Run flow 
+          command: yarn flow 
