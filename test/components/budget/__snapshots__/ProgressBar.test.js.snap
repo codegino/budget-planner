@@ -1,6 +1,270 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders without crashing 1`] = `
+exports[`renders with color danger progress bar when percentage 90 and above will change color at 90% 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#193e2c",
+      "borderColor": "#5fbd98",
+      "borderRadius": 5,
+      "borderWidth": 2,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "padding": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 3,
+          "flexDirection": "row",
+          "minHeight": 20,
+        },
+        Object {
+          "backgroundColor": "red",
+          "width": "90%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "fontWeight": "bold",
+            "paddingHorizontal": 5,
+          },
+          Object {
+            "color": "#555",
+          },
+        ]
+      }
+    >
+      90
+      /
+      100
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders with color danger progress bar when percentage 90 and above will still be color danger after exceeding 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#193e2c",
+      "borderColor": "#5fbd98",
+      "borderRadius": 5,
+      "borderWidth": 2,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "padding": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 3,
+          "flexDirection": "row",
+          "minHeight": 20,
+        },
+        Object {
+          "backgroundColor": "red",
+          "width": "1000%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "fontWeight": "bold",
+            "paddingHorizontal": 5,
+          },
+          Object {
+            "color": "#555",
+          },
+        ]
+      }
+    >
+      1000
+      /
+      100
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders with color notify progress bar when percentage is 50-69 will change color at 50% 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#193e2c",
+      "borderColor": "#5fbd98",
+      "borderRadius": 5,
+      "borderWidth": 2,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "padding": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 3,
+          "flexDirection": "row",
+          "minHeight": 20,
+        },
+        Object {
+          "backgroundColor": "yellow",
+          "width": "50%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "fontWeight": "bold",
+            "paddingHorizontal": 5,
+          },
+          Object {
+            "color": "#333",
+          },
+        ]
+      }
+    >
+      50
+      /
+      100
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders with color notify progress bar when percentage is 50-69 will have an 69% at maximum 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#193e2c",
+      "borderColor": "#5fbd98",
+      "borderRadius": 5,
+      "borderWidth": 2,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "padding": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 3,
+          "flexDirection": "row",
+          "minHeight": 20,
+        },
+        Object {
+          "backgroundColor": "yellow",
+          "width": "69%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "fontWeight": "bold",
+            "paddingHorizontal": 5,
+          },
+          Object {
+            "color": "#333",
+          },
+        ]
+      }
+    >
+      69
+      /
+      100
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders with color success progress bar when percentage is below 50 will have an 0% at minimum 1`] = `
 <View
   style={
     Object {
@@ -26,7 +290,7 @@ exports[`renders without crashing 1`] = `
         },
         Object {
           "backgroundColor": "green",
-          "width": "NaN%",
+          "width": "0%",
         },
       ]
     }
@@ -58,7 +322,207 @@ exports[`renders without crashing 1`] = `
         ]
       }
     >
+      0
       /
+      100
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders with color success progress bar when percentage is below 50 will have an 49% at maximum 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#193e2c",
+      "borderColor": "#5fbd98",
+      "borderRadius": 5,
+      "borderWidth": 2,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "padding": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 3,
+          "flexDirection": "row",
+          "minHeight": 20,
+        },
+        Object {
+          "backgroundColor": "green",
+          "width": "49%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "fontWeight": "bold",
+            "paddingHorizontal": 5,
+          },
+          Object {
+            "color": "white",
+          },
+        ]
+      }
+    >
+      49
+      /
+      100
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders with color warning progress bar when percentage is 70-89 will change color at 70% 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#193e2c",
+      "borderColor": "#5fbd98",
+      "borderRadius": 5,
+      "borderWidth": 2,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "padding": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 3,
+          "flexDirection": "row",
+          "minHeight": 20,
+        },
+        Object {
+          "backgroundColor": "orange",
+          "width": "70%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "fontWeight": "bold",
+            "paddingHorizontal": 5,
+          },
+          Object {
+            "color": "#333",
+          },
+        ]
+      }
+    >
+      70
+      /
+      100
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders with color warning progress bar when percentage is 70-89 will have an 89% at maximum 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#193e2c",
+      "borderColor": "#5fbd98",
+      "borderRadius": 5,
+      "borderWidth": 2,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "padding": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 3,
+          "flexDirection": "row",
+          "minHeight": 20,
+        },
+        Object {
+          "backgroundColor": "orange",
+          "width": "89%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "fontWeight": "bold",
+            "paddingHorizontal": 5,
+          },
+          Object {
+            "color": "#333",
+          },
+        ]
+      }
+    >
+      89
+      /
+      100
     </Text>
   </View>
 </View>
