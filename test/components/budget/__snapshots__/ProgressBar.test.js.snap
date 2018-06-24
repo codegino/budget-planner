@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#193e2c",
+      "borderColor": "#5fbd98",
+      "borderRadius": 5,
+      "borderWidth": 2,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "padding": 1,
+      "width": "100%",
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 3,
+          "flexDirection": "row",
+          "minHeight": 20,
+        },
+        Object {
+          "backgroundColor": "green",
+          "width": "NaN%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "justifyContent": "center",
+        "position": "absolute",
+        "width": "100%",
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Array [
+          Object {
+            "alignSelf": "center",
+            "fontWeight": "bold",
+            "paddingHorizontal": 5,
+          },
+          Object {
+            "color": "white",
+          },
+        ]
+      }
+    >
+      /
+    </Text>
+  </View>
+</View>
+`;

@@ -4,7 +4,8 @@
   ],
   "env": {
     "react-native/react-native": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "parser": "babel-eslint",
   "extends": "airbnb",
@@ -17,7 +18,7 @@
   "settings": {
     "import/resolver": {
         "node": {
-            "paths": ["src"]
+            "paths": ["src", "test"]
         }
     }
 }
