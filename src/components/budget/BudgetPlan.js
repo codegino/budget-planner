@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Text, View, TouchableNativeFeedback, StyleSheet, FlatList } from 'react-native';
+import { Text, View, TouchableNativeFeedback, StyleSheet, FlatList, Platform, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Navigation } from 'react-native-navigation';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -179,35 +179,42 @@ class Budget extends PureComponent<BudgetProps> {
       emoticon = <Icon name="emoticon-neutral" size={50} color={color} />;
     }
 
-    return (
-      <TouchableNativeFeedback onLongPress={this.onLongPressHandler} >
-        <View style={styles.container}>
-          <View style={styles.budgetPlanWrapper}>
-            <View style={styles.budgetPlan}>
-              <View style={{ width: '90%', justifyContent: 'space-between' }}>
-                <Text style={styles.label}>{this.props.budgetPlan.category}</Text>
-                <ProgressBar
-                  numerator={this.props.budgetPlan.expenses}
-                  denominator={this.props.budgetPlan.budget}
-                  proress={progress}
-                  color={color}
-                />
-              </View>
-              <View>
-                {emoticon}
-              </View>
+    const content = (
+      <View style={styles.container}>
+        <View style={styles.budgetPlanWrapper}>
+          <View style={styles.budgetPlan}>
+            <View style={{ width: '90%', justifyContent: 'space-between' }}>
+              <Text style={styles.label}>{this.props.budgetPlan.category}</Text>
+              <ProgressBar
+                numerator={this.props.budgetPlan.expenses}
+                denominator={this.props.budgetPlan.budget}
+                proress={progress}
+                color={color}
+              />
             </View>
-            {details}
-            <TouchableNativeFeedback onPress={this.onToggleExpandHandler}>
-              <View style={styles.bottom}>
-                <Text style={styles.bottomText}>{bottomText}</Text>
-              </View>
-            </TouchableNativeFeedback>
-            {menu}
+            <View>
+              {emoticon}
+            </View>
           </View>
+          {details}
+          <TouchableNativeFeedback onPress={this.onToggleExpandHandler}>
+            <View style={styles.bottom}>
+              <Text style={styles.bottomText}>{bottomText}</Text>
+            </View>
+          </TouchableNativeFeedback>
+          {menu}
         </View>
-      </TouchableNativeFeedback>
+      </View>
     );
+
+    if (Platform.OS === 'android') {
+      return (
+        <TouchableNativeFeedback onLongPress={this.onLongPressHandler} >
+          {content}
+        </TouchableNativeFeedback>
+      );
+    }
+    return <TouchableOpacity onLongPress={this.onLongPressHandler}>{content}</TouchableOpacity>;
   }
 }
 
