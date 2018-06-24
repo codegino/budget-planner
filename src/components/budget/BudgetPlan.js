@@ -2,14 +2,13 @@ import React, { PureComponent } from 'react';
 import { Text, View, TouchableNativeFeedback, StyleSheet, FlatList, Platform, TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { Navigation } from 'react-native-navigation';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import _ from 'lodash';
 
 import ItemSubMenu from '../../components/menu/ItemSubMenu';
-import ProgressBar from './ProgressBar';
 import colors from '../../constants/colors';
+import BudgetPlanSummary from '../../components/budget/BudgetPlanSummary';
+import BudgetPlanDetail from '../../components/budget/BudgetPlanDetail';
 import { updateBudgetPlan, deleteBudgetPlan } from '../../store/actions/budgetPlan';
-
 
 const styles = StyleSheet.create({
   container: {
@@ -23,22 +22,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  budgetPlan: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
   budgetPlanWrapper: {
     width: '100%',
     paddingLeft: 10,
     paddingRight: 20,
     justifyContent: 'space-between',
-  },
-  label: {
-    width: '100%',
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: 'white',
   },
   bottom: {
     marginTop: 3,
@@ -47,20 +35,6 @@ const styles = StyleSheet.create({
   bottomText: {
     textDecorationLine: 'underline',
     alignSelf: 'center',
-    color: 'white',
-  },
-  itemDetail: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderRadius: 5,
-    borderWidth: 1,
-    padding: 5,
-    marginTop: 5,
-    borderColor: colors.primaryLight,
-    backgroundColor: colors.primaryDark,
-  },
-  detailText: {
-    fontSize: 15,
     color: 'white',
   },
 });
@@ -134,21 +108,13 @@ class Budget extends PureComponent<BudgetProps> {
 
     const bottomText = this.state.isExpanded ? 'Show less' : 'Show more';
 
-    const itemDetail = ({ item }) => (
-      <View style={styles.itemDetail}>
-        <Text style={[styles.detailText, { fontWeight: 'bold', width: '50%' }]}>{item.name}</Text>
-        <Text style={[styles.detailText, { width: '20%' }]}>{item.price}</Text>
-        <Text style={[styles.detailText, { width: '30%' }]}>{item.date}</Text>
-      </View>
-    );
-
     if (this.state.isExpanded) {
       details = (<FlatList
         data={this.props.budgetPlanItems(
           this.props.budgetPlan.date,
           this.props.budgetPlan.category,
         )}
-        renderItem={itemDetail}
+        renderItem={({ item }) => <BudgetPlanDetail item={item} />}
         keyExtractor={item => item.id}
       />);
     }
@@ -163,39 +129,10 @@ class Budget extends PureComponent<BudgetProps> {
       );
     }
 
-    let color = colors.success;
-    let emoticon = <Icon name="emoticon-excited" size={50} color={color} />;
-
-    const progress = (this.props.budgetPlan.expenses / this.props.budgetPlan.budget) * 100;
-
-    if (progress >= 90) {
-      color = colors.danger;
-      emoticon = <Icon name="emoticon-dead" size={50} color={color} />;
-    } else if (progress >= 70) {
-      color = colors.warning;
-      emoticon = <Icon name="emoticon-sad" size={50} color={color} />;
-    } else if (progress >= 50) {
-      color = colors.notify;
-      emoticon = <Icon name="emoticon-neutral" size={50} color={color} />;
-    }
-
     const content = (
       <View style={styles.container}>
         <View style={styles.budgetPlanWrapper}>
-          <View style={styles.budgetPlan}>
-            <View style={{ width: '90%', justifyContent: 'space-between' }}>
-              <Text style={styles.label}>{this.props.budgetPlan.category}</Text>
-              <ProgressBar
-                numerator={this.props.budgetPlan.expenses}
-                denominator={this.props.budgetPlan.budget}
-                proress={progress}
-                color={color}
-              />
-            </View>
-            <View>
-              {emoticon}
-            </View>
-          </View>
+          <BudgetPlanSummary budgetPlan={this.props.budgetPlan} />
           {details}
           <TouchableNativeFeedback onPress={this.onToggleExpandHandler}>
             <View style={styles.bottom}>
