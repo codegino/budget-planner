@@ -6,27 +6,22 @@ import { clearExpenses } from '../actions/expenses';
 import { clearBudgetPlan } from '../actions/budgetPlan';
 import { onLoadingEnd, onLoadingStart } from '../actions/ui';
 import startExpensesTabs from '../../screens/tracker/startExpensesTabs';
-import firebase from '../../services/firebase';
-
+import { signOut, signInWithEmailAndPassword, getCurrentUser, createUserWithEmailAndPassword } from '../../services/firebaseAuth';
 
 export function* authSignupSaga(action) {
   try {
     yield put(onLoadingStart());
     const { email, password } = action.authData;
 
-    firebase.auth()
-      .createUserWithEmailAndPassword(email, password)
-      .catch(() => {
-        put(onLoadingEnd());
-      });
+    yield call(createUserWithEmailAndPassword, email, password);
 
-    const currentUser = yield firebase.auth().currentUser;
+    const currentUser = yield call(getCurrentUser);
     yield put(authSignupSucceed({
       token: currentUser.qa,
       userId: currentUser.uid,
     }));
 
-    yield call(Navigation.startSingleScreenApp, {
+    yield call([Navigation, Navigation.startSingleScreenApp], {
       screen: {
         screen: 'expenses.AuthScreen',
         title: 'Login',
@@ -42,11 +37,8 @@ export function* authSignupSaga(action) {
 export function* authLoginSaga(action) {
   try {
     yield put(onLoadingStart());
-    yield firebase.auth()
-      .signInWithEmailAndPassword(action.authData.email, action.authData.password);
-
-    const authRef = yield call([firebase, firebase.auth]);
-    const currentUser = yield authRef.currentUser;
+    yield call(signInWithEmailAndPassword, action.authData.email, action.authData.password);
+    const currentUser = yield call(getCurrentUser);
 
     yield put(authLoginSucceed({
       token: currentUser.qa,
@@ -83,8 +75,7 @@ export function* authAutoLoginSaga(action) {
 export function* authLogoutSaga() {
   yield put(onLoadingStart());
   try {
-    const authRef = yield call([firebase, firebase.auth]);
-    yield call([authRef, authRef.signOut]);
+    yield call(signOut);
     yield put(authLogoutSucceed());
     yield put(clearExpenses());
     yield put(clearBudgetPlan());
