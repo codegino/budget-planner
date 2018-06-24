@@ -4,9 +4,11 @@
 
 ## Installation + Running
 1. cd expenses
-2. npm install
-3. Open project in  android studio
-4. npm run android
+2. npm install OR yarn
+3. Open project in  android studio (Make sure to use updated Gradle)
+4. Fix android studio warnings https://gist.github.com/gihooh/55d5e58c48bbe20c1481462c2a0c949e
+5. npm run android
+6. to create signed apk - cd android && gradlew assembleRelease
 
 ## React related libraries
 - react-native-datepicker
