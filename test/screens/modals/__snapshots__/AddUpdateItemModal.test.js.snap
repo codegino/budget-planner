@@ -268,7 +268,7 @@ exports[`Rendering of view will render the default view for adding new Item 1`] 
                 ]
               }
             >
-              03-May-2018
+              28-Jun-2018
             </Text>
           </View>
           <Image
@@ -372,14 +372,7 @@ exports[`Rendering of view will render the default view for adding new Item 1`] 
                     <View
                       pointerEvents="auto"
                     >
-                      <DatePickerIOS
-                        date={2018-05-02T16:00:00.000Z}
-                        locale={undefined}
-                        maximumDate={undefined}
-                        minimumDate={undefined}
-                        minuteInterval={undefined}
-                        mode="date"
-                        onDateChange={[Function]}
+                      <View
                         style={
                           Array [
                             Object {
@@ -390,8 +383,25 @@ exports[`Rendering of view will render the default view for adding new Item 1`] 
                             undefined,
                           ]
                         }
-                        timeZoneOffsetInMinutes={null}
-                      />
+                      >
+                        <RCTDatePicker
+                          date={1530115200000}
+                          locale={undefined}
+                          maximumDate={undefined}
+                          minimumDate={undefined}
+                          minuteInterval={undefined}
+                          mode="date"
+                          onChange={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Object {
+                              "height": 216,
+                            }
+                          }
+                          timeZoneOffsetInMinutes={null}
+                        />
+                      </View>
                     </View>
                     <View
                       accessibilityComponentType={undefined}
@@ -790,7 +800,7 @@ exports[`Rendering of view will render the default view for edditing Item 1`] = 
                 ]
               }
             >
-              03-May-2018
+              02-Jan-2018
             </Text>
           </View>
           <Image
@@ -894,14 +904,7 @@ exports[`Rendering of view will render the default view for edditing Item 1`] = 
                     <View
                       pointerEvents="auto"
                     >
-                      <DatePickerIOS
-                        date={2018-05-02T16:00:00.000Z}
-                        locale={undefined}
-                        maximumDate={undefined}
-                        minimumDate={undefined}
-                        minuteInterval={undefined}
-                        mode="date"
-                        onDateChange={[Function]}
+                      <View
                         style={
                           Array [
                             Object {
@@ -912,8 +915,25 @@ exports[`Rendering of view will render the default view for edditing Item 1`] = 
                             undefined,
                           ]
                         }
-                        timeZoneOffsetInMinutes={null}
-                      />
+                      >
+                        <RCTDatePicker
+                          date={1514822400000}
+                          locale={undefined}
+                          maximumDate={undefined}
+                          minimumDate={undefined}
+                          minuteInterval={undefined}
+                          mode="date"
+                          onChange={[Function]}
+                          onResponderTerminationRequest={[Function]}
+                          onStartShouldSetResponder={[Function]}
+                          style={
+                            Object {
+                              "height": 216,
+                            }
+                          }
+                          timeZoneOffsetInMinutes={null}
+                        />
+                      </View>
                     </View>
                     <View
                       accessibilityComponentType={undefined}

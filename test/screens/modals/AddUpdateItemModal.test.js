@@ -4,24 +4,7 @@ import renderer from 'react-test-renderer';
 import AddUpdateItemModal from 'screens/modals/AddUpdateItemModal';
 
 describe('Rendering of view', () => {
-  const RealDate = Date;
-
   let store;
-  beforeAll(() => {
-    const constantDate = new Date('May 02 2018');
-    // eslint-disable-next-line
-    Date = class extends Date {
-      constructor() {
-        super();
-        return constantDate;
-      }
-    };
-  });
-
-  afterAll(() => {
-    // eslint-disable-next-line
-    Date = RealDate;
-  });
 
   beforeEach(() => {
     const getState = {
@@ -31,7 +14,6 @@ describe('Rendering of view', () => {
     };
     const mockStore = configureStore(getState);
     store = mockStore(getState);
-    jest.mock('DatePickerIOS', () => 'DatePickerIOS');
   });
 
   it('will render the default view for adding new Item', () => {
