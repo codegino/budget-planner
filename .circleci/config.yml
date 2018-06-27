@@ -6,7 +6,7 @@
 version: 2
 machine:
   timezone:
-    Manila
+    Philippines/Manila
 jobs:
   build:
     docker:
