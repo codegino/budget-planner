@@ -4,9 +4,6 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
-machine:
-  timezone:
-    Philippines/Manila
 jobs:
   build:
     docker:
@@ -36,18 +33,19 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+           name: Change timezone to Manila
+           command:  sudo cp /usr/share/zoneinfo/Asia/Manila /etc/localtime
         
-      # run lint!
       - run:
            name: Run ES lint
            command:  yarn lint
 
-      # run tests!
       - run:
           name: Run test
           command: yarn test
 
-      # run flow!
       - run:
           name: Run flow 
           command: yarn flow 

@@ -8,7 +8,7 @@ describe('Rendering of view', () => {
 
   let store;
   beforeAll(() => {
-    const constantDate = new Date(0);
+    const constantDate = new Date('May 02 2018');
     // eslint-disable-next-line
     Date = class extends Date {
       constructor() {
