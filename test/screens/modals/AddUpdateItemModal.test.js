@@ -4,6 +4,7 @@ import renderer from 'react-test-renderer';
 import AddUpdateItemModal from 'screens/modals/AddUpdateItemModal';
 
 describe('Rendering of view', () => {
+  jest.mock('DatePickerIOS', () => 'DatePickerIOS');
   let store;
   beforeEach(() => {
     const getState = {

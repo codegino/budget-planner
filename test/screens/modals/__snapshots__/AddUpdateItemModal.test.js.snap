@@ -372,7 +372,14 @@ exports[`Rendering of view will render the default view for adding new Item 1`] 
                     <View
                       pointerEvents="auto"
                     >
-                      <View
+                      <DatePickerIOS
+                        date={2018-06-26T16:00:00.000Z}
+                        locale={undefined}
+                        maximumDate={undefined}
+                        minimumDate={undefined}
+                        minuteInterval={undefined}
+                        mode="date"
+                        onDateChange={[Function]}
                         style={
                           Array [
                             Object {
@@ -383,25 +390,8 @@ exports[`Rendering of view will render the default view for adding new Item 1`] 
                             undefined,
                           ]
                         }
-                      >
-                        <RCTDatePicker
-                          date={1530028800000}
-                          locale={undefined}
-                          maximumDate={undefined}
-                          minimumDate={undefined}
-                          minuteInterval={undefined}
-                          mode="date"
-                          onChange={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
-                          style={
-                            Object {
-                              "height": 216,
-                            }
-                          }
-                          timeZoneOffsetInMinutes={null}
-                        />
-                      </View>
+                        timeZoneOffsetInMinutes={null}
+                      />
                     </View>
                     <View
                       accessibilityComponentType={undefined}
@@ -904,7 +894,14 @@ exports[`Rendering of view will render the default view for edditing Item 1`] = 
                     <View
                       pointerEvents="auto"
                     >
-                      <View
+                      <DatePickerIOS
+                        date={2018-01-01T16:00:00.000Z}
+                        locale={undefined}
+                        maximumDate={undefined}
+                        minimumDate={undefined}
+                        minuteInterval={undefined}
+                        mode="date"
+                        onDateChange={[Function]}
                         style={
                           Array [
                             Object {
@@ -915,25 +912,8 @@ exports[`Rendering of view will render the default view for edditing Item 1`] = 
                             undefined,
                           ]
                         }
-                      >
-                        <RCTDatePicker
-                          date={1514822400000}
-                          locale={undefined}
-                          maximumDate={undefined}
-                          minimumDate={undefined}
-                          minuteInterval={undefined}
-                          mode="date"
-                          onChange={[Function]}
-                          onResponderTerminationRequest={[Function]}
-                          onStartShouldSetResponder={[Function]}
-                          style={
-                            Object {
-                              "height": 216,
-                            }
-                          }
-                          timeZoneOffsetInMinutes={null}
-                        />
-                      </View>
+                        timeZoneOffsetInMinutes={null}
+                      />
                     </View>
                     <View
                       accessibilityComponentType={undefined}
