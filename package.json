@@ -33,7 +33,10 @@
     "flow": "flow"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "moduleNameMapper": {
+      "\\.(css|jpg|png)$": "<rootDir>/test/__mocks__/empty-module.js"
+    }
   },
   "dependencies": {
     "dateformat": "^3.0.3",
