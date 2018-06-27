@@ -4,8 +4,25 @@ import renderer from 'react-test-renderer';
 import AddUpdateItemModal from 'screens/modals/AddUpdateItemModal';
 
 describe('Rendering of view', () => {
-  jest.mock('DatePickerIOS', () => 'DatePickerIOS');
+  const RealDate = Date;
+
   let store;
+  beforeAll(() => {
+    const constantDate = new Date('May 2 2018');
+    // eslint-disable-next-line
+    Date = class extends Date {
+      constructor() {
+        super();
+        return constantDate;
+      }
+    };
+  });
+
+  afterAll(() => {
+    // eslint-disable-next-line
+    Date = RealDate;
+  });
+
   beforeEach(() => {
     const getState = {
       budgetPlan: {
@@ -14,7 +31,7 @@ describe('Rendering of view', () => {
     };
     const mockStore = configureStore(getState);
     store = mockStore(getState);
-    Date.now = jest.fn(() => 1482363367071);
+    jest.mock('DatePickerIOS', () => 'DatePickerIOS');
   });
 
   it('will render the default view for adding new Item', () => {

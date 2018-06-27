@@ -268,7 +268,7 @@ exports[`Rendering of view will render the default view for adding new Item 1`] 
                 ]
               }
             >
-              27-Jun-2018
+              03-May-2018
             </Text>
           </View>
           <Image
@@ -373,7 +373,7 @@ exports[`Rendering of view will render the default view for adding new Item 1`] 
                       pointerEvents="auto"
                     >
                       <DatePickerIOS
-                        date={2018-06-26T16:00:00.000Z}
+                        date={2018-05-02T16:00:00.000Z}
                         locale={undefined}
                         maximumDate={undefined}
                         minimumDate={undefined}
@@ -790,7 +790,7 @@ exports[`Rendering of view will render the default view for edditing Item 1`] = 
                 ]
               }
             >
-              02-Jan-2018
+              03-May-2018
             </Text>
           </View>
           <Image
@@ -895,7 +895,7 @@ exports[`Rendering of view will render the default view for edditing Item 1`] = 
                       pointerEvents="auto"
                     >
                       <DatePickerIOS
-                        date={2018-01-01T16:00:00.000Z}
+                        date={2018-05-02T16:00:00.000Z}
                         locale={undefined}
                         maximumDate={undefined}
                         minimumDate={undefined}
