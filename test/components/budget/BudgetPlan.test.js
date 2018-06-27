@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 import saga from 'redux-saga';
 import { applyMiddleware } from 'redux';
 
-import BudgetPlan from 'components/budget/BudgetPlan';
+import BudgetPlan from 'containers/budget/BudgetPlan';
 
 const middlewares = [saga];
 

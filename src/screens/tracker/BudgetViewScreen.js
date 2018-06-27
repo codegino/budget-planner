@@ -7,7 +7,7 @@ import Spinner from 'react-native-loading-spinner-overlay';
 
 import { fetchBudgetPlan } from '../../store/actions/budgetPlan';
 import { updateMonth } from '../../store/actions/expenses';
-import Budget from '../../components/budget/BudgetPlan';
+import Budget from '../../containers/budget/BudgetPlan';
 import colors from '../../constants/colors';
 
 type Props = {

@@ -6,10 +6,10 @@ import _ from 'lodash';
 import dateformat from 'dateformat';
 
 import { fetchExpenses, updateMonth } from '../../store/actions/expenses';
-import TotalPrice from '../../components/item/TotalPrice';
+import TotalPrice from '../../containers/item/TotalPrice';
 import RoundAddButton from '../../components/button/RoundAddButton';
 import styles from './monthViewScreenStyle';
-import ItemsForEachDay from '../../components/item/ItemsForEachDay';
+import ItemsForEachDay from '../../containers/item/ItemsForEachDay';
 
 type Props = {
   navigator: Function,

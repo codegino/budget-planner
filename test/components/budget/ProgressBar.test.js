@@ -1,5 +1,5 @@
 import React from 'react';
-import ProgressBar from 'components/budget/ProgressBar';
+import ProgressBar from 'containers/budget/ProgressBar';
 import renderer from 'react-test-renderer';
 
 describe('renders with color success progress bar when percentage is below 50', () => {

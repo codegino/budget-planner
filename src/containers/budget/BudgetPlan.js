@@ -6,8 +6,8 @@ import _ from 'lodash';
 
 import ItemSubMenu from '../../components/menu/ItemSubMenu';
 import colors from '../../constants/colors';
-import BudgetPlanSummary from '../../components/budget/BudgetPlanSummary';
-import BudgetPlanDetail from '../../components/budget/BudgetPlanDetail';
+import BudgetPlanSummary from './BudgetPlanSummary';
+import BudgetPlanDetail from './BudgetPlanDetail';
 import { updateBudgetPlan, deleteBudgetPlan } from '../../store/actions/budgetPlan';
 
 const styles = StyleSheet.create({
