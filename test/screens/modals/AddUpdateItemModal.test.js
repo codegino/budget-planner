@@ -13,6 +13,7 @@ describe('Rendering of view', () => {
     };
     const mockStore = configureStore(getState);
     store = mockStore(getState);
+    Date.now = jest.fn(() => 1482363367071);
   });
 
   it('will render the default view for adding new Item', () => {
