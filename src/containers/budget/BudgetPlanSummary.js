@@ -31,7 +31,6 @@ const BudgetPlanSummary = (props: BudgetPlanSummaryProps) => {
   let color = colors.success;
   let emoticon = <Icon name="emoticon-excited" size={50} color={color} />;
 
-
   const progress = (props.budgetPlan.expenses / props.budgetPlan.budget) * 100;
 
   if (progress >= 90) {
@@ -45,13 +44,16 @@ const BudgetPlanSummary = (props: BudgetPlanSummaryProps) => {
     emoticon = <Icon name="emoticon-neutral" size={50} color={color} />;
   }
 
+  const numerator = Math.round(props.budgetPlan.expenses * 100) / 100;
+  const denominator = Math.round(props.budgetPlan.budget * 100) / 100;
+
   return (
     <View style={styles.budgetPlan}>
       <View style={{ width: '90%', justifyContent: 'space-between' }}>
         <Text style={styles.label}>{props.budgetPlan.category}</Text>
         <ProgressBar
-          numerator={props.budgetPlan.expenses}
-          denominator={props.budgetPlan.budget}
+          numerator={numerator}
+          denominator={denominator}
           proress={progress}
           color={color}
         />

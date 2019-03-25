@@ -28,9 +28,10 @@ type Props = {
 
 const totalPrice = (props: Props) => {
   const total = _.sumBy(props.items, 'price');
+  const displayedTotal = Math.round(total * 100) / 100;
 
   return (
-    <View style={styles.container}><Text style={styles.price}>Total: {total}</Text></View>
+    <View style={styles.container}><Text style={styles.price}>Total: {displayedTotal}</Text></View>
   );
 };
 

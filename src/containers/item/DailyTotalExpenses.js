@@ -44,13 +44,14 @@ type Props = {
 
 const DailyTotalPrice = (props: Props) => {
   const total = _.sumBy(props.items, 'price');
+  const displayedTotal = Math.round(total * 100) / 100;
 
   return (
     <View style={styles.container}>
       <View style={styles.wrapper}>
         <Text style={styles.date}>{props.items[0].date}</Text>
         <Text style={styles.entries}>Entries: {props.items.length}</Text>
-        <Text style={styles.price}>Total: {total}</Text>
+        <Text style={styles.price}>Total: {displayedTotal}</Text>
       </View>
     </View>
   );
